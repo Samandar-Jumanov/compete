@@ -1,6 +1,12 @@
+"use client"
+
 import { Paper, Typography, Stack, Button } from '@mui/material';
+import { useRouter } from "next/navigation"
 
 export const HomePageComponent = () => {
+    const router = useRouter()
+
+ 
   return (
     <Stack
       sx={{
@@ -38,7 +44,11 @@ export const HomePageComponent = () => {
           Whether you're a seasoned coder looking for new challenges or a novice eager to learn and improve, <strong>COMPETE</strong> provides the perfect platform to thrive and excel. Join us today and embark on an exciting journey of <strong>competition</strong>, <strong>learning</strong>, and <strong>growth</strong> in the realm of programming!
         </Typography>
       </Paper>
-      <Button variant="contained" style={{ backgroundColor: '#ffcc00', color: 'black' }}>
+      <Button
+       variant="contained" 
+       style={{ backgroundColor: '#ffcc00', color: 'black' }}
+       onClick={() => router.push("/login")}
+       >
         Get started
       </Button>
     </Stack>
